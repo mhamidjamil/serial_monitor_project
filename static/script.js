@@ -53,6 +53,12 @@ function receiveData() {
             if (data.data) {
                 const terminal = document.getElementById('terminal');
                 terminal.value += '\n' + data.data;
+
+                // Auto-scroll if the checkbox is checked
+                const autoScroll = document.getElementById('autoScroll').checked;
+                if (autoScroll) {
+                    terminal.scrollTop = terminal.scrollHeight;
+                }
             }
         });
 }
