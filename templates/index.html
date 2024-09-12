@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serial Monitor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1>Serial Monitor</h1>
+
+    <div>
+        <label for="ports">Select Port:</label>
+        <select id="ports"></select>
+    </div>
+
+    <div>
+        <label for="baudrate">Baud Rate:</label>
+        <input type="number" id="baudrate" value="9600">
+    </div>
+
+    <button onclick="connectPort()">Connect</button>
+    <button onclick="disconnectPort()">Disconnect</button>
+
+    <div>
+        <textarea id="terminal" rows="20" cols="50" readonly></textarea>
+    </div>
+
+    <div>
+        <input type="text" id="dataToSend">
+        <button onclick="sendData()">Send</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
