@@ -38,11 +38,17 @@ function disconnectPort() {
 }
 
 function sendData() {
-    const data = document.getElementById('dataToSend').value;
+    const dataInput = document.getElementById('dataToSend');
+    const data = dataInput.value;
+
     fetch('/api/send_data', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({data: data})
+    })
+    .then(() => {
+        // Clear the input field after sending the data
+        dataInput.value = '';
     });
 }
 
