@@ -69,5 +69,5 @@ function receiveData() {
         });
 }
 
-setInterval(receiveData, 1000);
+setInterval(receiveData, 50);
 fetchPorts();
