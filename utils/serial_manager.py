@@ -10,7 +10,7 @@ class SerialManager:
         ports = serial.tools.list_ports.comports()
         return [port.device for port in ports]
 
-    def connect(self, port, baudrate=9600):
+    def connect(self, port, baudrate=115200):
         """Connect to the selected serial port."""
         try:
             self.serial_port = serial.Serial(port, baudrate, timeout=1)

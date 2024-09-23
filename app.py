@@ -17,7 +17,7 @@ def list_ports():
 def connect():
     data = request.json
     port = data.get('port')
-    baudrate = data.get('baudrate', 9600)
+    baudrate = data.get('baudrate', 115200)
     if serial_manager.connect(port, baudrate):
         return jsonify({'status': 'connected'})
     else:
